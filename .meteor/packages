@@ -37,6 +37,8 @@ sacha:juice
 chuangbo:marked@0.3.3
 percolatestudio:synced-cron@0.1.1
 npm-container
+npm-container/index.js
+npm-container/package.js
 matb33:collection-hooks
 djedi:sanitize-html
 rajit:bootstrap3-datepicker
