@@ -31,6 +31,14 @@ Template[getTemplate('post_submit')].rendered = function(){
     callback(instance);
   });
 
+  Session.set('currentPostStatus', STATUS_APPROVED);
+  Session.set('selectedPostId', null);
+  if(!this.editor && $('#editor').exists())
+    this.editor= new EpicEditor(EpicEditorOptions).load();
+
+  $('#postedAtDate').datepicker();
+
+  // $("#postUser").selectToAutocomplete(); // XXX
   var urlParams;
   (window.onpopstate = function () {
       var match,
@@ -46,14 +54,6 @@ Template[getTemplate('post_submit')].rendered = function(){
   $('#url').val(urlParams["url"]);
   $('#title').val(urlParams["title"]);
 }
-  Session.set('currentPostStatus', STATUS_APPROVED);
-  Session.set('selectedPostId', null);
-  if(!this.editor && $('#editor').exists())
-    this.editor= new EpicEditor(EpicEditorOptions).load();
-
-  $('#postedAtDate').datepicker();
-
-  // $("#postUser").selectToAutocomplete(); // XXX
 
 };
 
