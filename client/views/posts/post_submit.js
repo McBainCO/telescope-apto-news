@@ -53,9 +53,8 @@ Template[getTemplate('post_submit')].rendered = function(){
   })();
   $('#url').val(urlParams["url"]);
   $('#title').val(urlParams["title"]);
-}
-
 };
+
 
 Template[getTemplate('post_submit')].events({
   'change input[name=status]': function (e, i) {
