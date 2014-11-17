@@ -149,7 +149,7 @@ Template[getTemplate('post_submit')].events({
   },
   'click .get-title-link': function(e){
     e.preventDefault();
-    // var url=$("#url").val();
+    var url=$("#url").val();
     var $getTitleLink = $(".get-title-link");
     $getTitleLink.addClass("loading");
     if(url){
