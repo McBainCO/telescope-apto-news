@@ -4,9 +4,14 @@
     #headerColor{
       color: black;
     }
-    .search-field{
+    input.search-field{
       border: 1px solid #e8e8e8;
       width: 300px;
+    }
+
+    #headerText {
+      text-align: left;
+      padding-left: 10px;
     }
 
   </style>
@@ -28,14 +33,9 @@
       
     
 
-    {{#if hasPrimaryNav}}
-      <ul class="nav primary-nav desktop-nav {{dropdownClass}} header-module desktop-only">
-      <li style="width: 100px;">
-      <h1 class="logo header-module"  ><a href="/" id="headerColor">CRE Buzz</a></h1>
-      </li>
-       
-      </ul>
-    {{/if}}
+    <h1 class="logo header-module" id="headerText" ><a href="/" id="headerColor">{{site_title}}</a></h1> 
+    
+
 
     {{#if hasSecondaryNav}}
       <ul class="nav secondary-nav desktop-nav {{dropdownClass}} header-module desktop-only">
