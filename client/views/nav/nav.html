@@ -19,11 +19,14 @@
       <h1 class="logo header-module"><a href="/">{{site_title}}</a></h1>
     {{/if}} -->
     
-      <h1 class="logo header-module" ><a href="/" id="headerColor">CRE Buzz</a></h1>
+      
     
 
     {{#if hasPrimaryNav}}
       <ul class="nav primary-nav desktop-nav {{dropdownClass}} header-module desktop-only">
+      <li>
+      <h1 class="logo header-module" ><a href="/" id="headerColor">CRE Buzz</a></h1>
+      </li>
         {{#each primaryNav}}
           <li>
             {{> UI.dynamic template=getTemplate}}
