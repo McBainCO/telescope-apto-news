@@ -1,3 +1,33 @@
+## v0.9.11 “FormScope”
+
+* Now using [Autoform](https://github.com/aldeed/meteor-autoform/)'s **quickform** feature to generate post submit and edit forms. 
+* Various fixes by [@anthonymayer](https://github.com/anthonymayer).
+* Now using [fourseven:scss](https://github.com/fourseven/meteor-scss) to directly compile SCSS files. 
+* Renamed `post` method to `submitPost`. 
+* Post editing now happens via a `postEdit` method.
+* Categories are now normalized (only the `_id` is stored on the post object, not the whole category object).
+* Refactored Embedly package; now fills in description as well (thanks [@kvindasAB](https://github.com/kvindasAB)!).
+* Thumbnail height and width are now customizable in settings panel.
+* Settings and Post forms now i18n'ized.
+
+## v0.9.10 “i18nScope”
+
+* Now using [tap:i18n](https://github.com/TAPevents/tap-i18n) for internationalization (thanks a ton to @theosp).
+* Each package is now i18n'd invididually.
+* Chinese i18n code is now `zh-CN`, not `zh`.
+* Various fixes (thanks @anthonymayer).
+* Upgrade Avatar package (thanks @bengott).
+
+## v0.9.9
+
+* Updating to Meteor 1.0.
+* Updating to Iron Router 1.0.
+* Adding view counter (thanks @steffenstraetz! See [PR #489](https://github.com/TelescopeJS/Telescope/pull/489))
+* Splitting out `router.js` in multiple files.
+* URL can now be removed when editing a post (thanks @massimilianomarini! See [PR 484](https://github.com/TelescopeJS/Telescope/pull/484)).
+* Now waiting on `allUsersAdmin` subscription for post submit page (thanks @kai101! See [PR 508](https://github.com/TelescopeJS/Telescope/pull/508))
+* Putting server-side routes for email template tests in their own respective packages.
+
 ## v0.9.8
 
 * Fixing #457 (pending posts view not working).

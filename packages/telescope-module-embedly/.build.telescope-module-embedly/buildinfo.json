@@ -1,0 +1,53 @@
+{
+  "builtBy": "meteor/13",
+  "buildDependencies": {
+    "os.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/package.js": "82838162bc284242333227a2b018d409ae5ba8fe",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/embedly.js": "c6ce98bac32316a4053bff41c0967e976939945e",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/server/get_embedly_data.js": "3051bf0854038b688a5abcefbbdcc37f1fabb593"
+      },
+      "directories": []
+    },
+    "web.browser.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/package.js": "82838162bc284242333227a2b018d409ae5ba8fe",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/embedly.js": "c6ce98bac32316a4053bff41c0967e976939945e",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.html": "e7827d42cc5f205e58f0b98a9d6fa0369ab626d2",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.js": "9992086364ad24c4d6ef5175b9a5423904e26ac2",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.css": "48e2e61847efec8b4b5565fef05f239ba5342bf9",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_video.html": "6bca1f574bfbc6c1ebabe8d8037388b6dbfcbff5",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_video.js": "018c9f5ff19fc5f2dcecb60f1f1b48c9583ec7ee"
+      },
+      "directories": []
+    },
+    "web.cordova.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/package.js": "82838162bc284242333227a2b018d409ae5ba8fe",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/embedly.js": "c6ce98bac32316a4053bff41c0967e976939945e",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.html": "e7827d42cc5f205e58f0b98a9d6fa0369ab626d2",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.js": "9992086364ad24c4d6ef5175b9a5423904e26ac2",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_thumbnail.css": "48e2e61847efec8b4b5565fef05f239ba5342bf9",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_video.html": "6bca1f574bfbc6c1ebabe8d8037388b6dbfcbff5",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/lib/client/post_video.js": "018c9f5ff19fc5f2dcecb60f1f1b48c9583ec7ee"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly/package.js": "82838162bc284242333227a2b018d409ae5ba8fe"
+    },
+    "directories": []
+  },
+  "source": "/Users/grahammcbain/apto/Telescope/packages/telescope-module-embedly",
+  "buildTimeDirectDependencies": {
+    "telescope-lib": "0.2.9+8f99c935e1877c58f39af5d2287bc2915e76d32e",
+    "templating": "1.0.7",
+    "http": "1.0.6",
+    "meteor": "1.1.1",
+    "telescope-base": "0.0.0+bddba8c5dc6a7bf80f8ca908f72bd24551a372ed"
+  },
+  "buildTimePluginDependencies": {},
+  "cordovaDependencies": null
+}

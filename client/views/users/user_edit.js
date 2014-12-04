@@ -15,7 +15,7 @@ Template[getTemplate('user_edit')].helpers({
     return getGitHubName(this) || "";
   },
   profileUrl: function(){
-    return Meteor.absoluteUrl()+"users/"+this.slug;
+    return getProfileUrlBySlugOrId(this.slug);
   },
   hasNotificationsUsers : function(){
     return getUserSetting('notifications.users', '', this) ? 'checked' : '';
@@ -40,7 +40,7 @@ Template[getTemplate('user_edit')].events({
 
     clearSeenErrors();
     if(!Meteor.user())
-      throwError(i18n.t('You must be logged in.'));
+      throwError(i18n.t('you_must_be_logged_in'));
 
     var $target=$(e.target);
     var name = $target.find('[name=name]').val();
@@ -71,13 +71,17 @@ Template[getTemplate('user_edit')].events({
       });
     }
 
+    update = userEditClientCallbacks.reduce(function(result, currentFunction) {
+      return currentFunction(user, result);
+    }, update);
+
     Meteor.users.update(user._id, {
       $set: update
     }, function(error){
       if(error){
         throwError(error.reason);
       } else {
-        throwError(i18n.t('Profile updated'));
+        throwError(i18n.t('profile_updated'));
       }
       Deps.afterFlush(function() {
         var element = $('.grid > .error');

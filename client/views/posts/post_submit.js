@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Template[getTemplate('post_submit')].helpers({
   categoriesEnabled: function(){
     return Categories.find().count();
@@ -75,96 +76,74 @@ Template[getTemplate('post_submit')].events({
     // ------------------------------ Properties ------------------------------ //
 
     // Basic Properties
+=======
+AutoForm.hooks({
+  submitPostForm: {
+    onSubmit: function(insertDoc, updateDoc, currentDoc) {
+>>>>>>> 1bd798fad130c5ffa2ccf38209dea5a7bf7b11e0
 
-    var properties = {
-      title: $('#title').val(),
-      body: instance.editor.exportFile(),
-      sticky: $('#sticky').is(':checked'),
-      userId: $('#postUser').val(),
-      status: parseInt($('input[name=status]:checked').val())
-    };
+      var properties = insertDoc;
+      var submit = this;
 
-    // PostedAt
+      // ------------------------------ Checks ------------------------------ //
 
-    var $postedAtDate = $('#postedAtDate');
-    var $postedAtTime = $('#postedAtTime');
-    var setPostedAt = false;
-    var postedAt = new Date(); // default to current browser date and time
-    var postedAtDate = $postedAtDate.datepicker('getDate');
-    var postedAtTime = $postedAtTime.val();
+      if (!Meteor.user()) {
+        throwError(i18n.t('you_must_be_logged_in'));
+        return false;
+      }
 
-    if ($postedAtDate.exists() && postedAtDate != "Invalid Date"){ // if custom date is set, use it
-      postedAt = postedAtDate;
-      setPostedAt = true;
-    }
+      // ------------------------------ Callbacks ------------------------------ //
 
-    if ($postedAtTime.exists() && postedAtTime.split(':').length==2){ // if custom time is set, use it
-      var hours = postedAtTime.split(':')[0];
-      var minutes = postedAtTime.split(':')[1];
-      postedAt = moment(postedAt).hour(hours).minute(minutes).toDate();
-      setPostedAt = true;
-    }
+      // run all post submit client callbacks on properties object successively
+      properties = postSubmitClientCallbacks.reduce(function(result, currentFunction) {
+          return currentFunction(result);
+      }, properties);
 
-    if(setPostedAt) // if either custom date or time has been set, pass result to properties
-      properties.postedAt = postedAt;
+      // console.log(properties)
 
-
-    // URL
-
-    var url = $('#url').val();
-    if(!!url){
-      var cleanUrl = (url.substring(0, 7) == "http://" || url.substring(0, 8) == "https://") ? url : "http://"+url;
-      properties.url = cleanUrl;
-    }
-
-    // ------------------------------ Callbacks ------------------------------ //
-
-    // run all post submit client callbacks on properties object successively
-    properties = postSubmitClientCallbacks.reduce(function(result, currentFunction) {
-        return currentFunction(result);
-    }, properties);
-
-    // console.log(properties)
-
-    // ------------------------------ Insert ------------------------------ //
-    if (properties) {
-      Meteor.call('post', properties, function(error, post) {
+      // ------------------------------ Insert ------------------------------ //
+      Meteor.call('submitPost', properties, function(error, post) {
         if(error){
-          throwError(error.reason);
-          clearSeenErrors();
-          $(e.target).removeClass('disabled');
-          if(error.error == 603)
-            Router.go('/posts/'+error.details);
+          submit.done(error);
         }else{
+          // note: find a way to do this in onSuccess instead?
           trackEvent("new post", {'postId': post._id});
-          if(post.status === STATUS_PENDING)
+          if (post.status === STATUS_PENDING) {
             throwError('Thanks, your post is awaiting approval.');
-          Router.go('/posts/'+post._id);
+          }
+          Router.go('post_page', {_id: post._id});
+          submit.done();
         }
       });
-    } else {
-      $(e.target).removeClass('disabled');      
+
+      return false
+    },
+
+    onSuccess: function(operation, result, template) {
+      // not used right now because I can't find a way to pass the "post" object to this callback
+      // console.log(post)
+      // trackEvent("new post", {'postId': post._id});
+      // if(post.status === STATUS_PENDING)
+      //   throwError('Thanks, your post is awaiting approval.');
+      // Router.go('/posts/'+post._id);
+    },
+
+    onError: function(operation, error, template) {
+      throwError(error.reason.split('|')[0]); // workaround because error.details returns undefined
+      clearSeenErrors();
+      // $(e.target).removeClass('disabled');
+      if (error.error == 603) {
+        var dupePostId = error.reason.split('|')[1];
+        Router.go('/posts/'+dupePostId);
+      }
     }
 
-  },
-  'click .get-title-link': function(e){
-    e.preventDefault();
-    var url=$("#url").val();
-    var $getTitleLink = $(".get-title-link");
-    $getTitleLink.addClass("loading");
-    if(url){
-      $.get(url, function(response){
-          if ((suggestedTitle=((/<title>(.*?)<\/title>/m).exec(response.responseText))) != null){
-              $("#title").val(suggestedTitle[1]);
-          }else{
-              alert("Sorry, couldn't find a title...");
-          }
-          $getTitleLink.removeClass("loading");
-       });
-    }else{
-      alert("Please fill in an URL first!");
-      $getTitleLink.removeClass("loading");
-    }
+    // Called at the beginning and end of submission, respectively.
+    // This is the place to disable/enable buttons or the form,
+    // show/hide a "Please wait" message, etc. If these hooks are
+    // not defined, then by default the submit button is disabled
+    // during submission.
+    // beginSubmit: function(formId, template) {},
+    // endSubmit: function(formId, template) {}
   }
-
 });
