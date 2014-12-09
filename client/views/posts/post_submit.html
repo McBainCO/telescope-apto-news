@@ -1,14 +1,19 @@
 <template name="post_submit">
 <<<<<<< HEAD
 
-
+<div class="onbutton">
   <div class="grid grid-module">
     {{> quickForm collection="Posts" id="submitPostForm" template="telescope" label-class="control-label" input-col-class="controls"}}
   </div>
-  <div> 
-       Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
-        <a href="javascript:(function(){window.s618=document.createElement('script');window.s618.setAttribute('type','text/javascript');window.s618.setAttribute('src','https://bookmarkify.it/bookmarklets/3007/raw');document.getElementsByTagName('body')[0].appendChild(window.s618);})();" id="thelink">Share on CRE.BUZZ</a>
+</div>
+       <div> 
+          Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
+          <a href="javascript:(function(){window.s618=document.createElement('script');window.s618.setAttribute('type','text/javascript');window.s618.setAttribute('src','https://bookmarkify.it/bookmarklets/3007/raw');document.getElementsByTagName('body')[0].appendChild(window.s618);})();" id="thelink">Share on CRE.BUZZ</a>
        </div> 
   
 </template>
->>>>>>> 1bd798fad130c5ffa2ccf38209dea5a7bf7b11e0
+<script type="text/javascript">
+  $("#onbutton").onclick(function(){
+    alert("Your article has been submitted!");
+  });
+</script>
