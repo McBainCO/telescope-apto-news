@@ -75,13 +75,12 @@ telescope-singleday
 telescope-invites
 
 # Accounts Templates
-<<<<<<< HEAD
 service-configuration
 accounts-ui
 splendido:accounts-templates-unstyled
-=======
+
 useraccounts:unstyled
 telescope-datetimepicker
 tsega:bootstrap3-datetimepicker@3.1.3_1
->>>>>>> 1bd798fad130c5ffa2ccf38209dea5a7bf7b11e0
+
 
