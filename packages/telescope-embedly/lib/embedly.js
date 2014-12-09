@@ -2,9 +2,10 @@ var thumbnailProperty = {
   propertyName: 'thumbnailUrl',
   propertySchema: {
     type: String,
-    optional: true,
     label: 'thumbnail',
+    optional: true,
     autoform: {
+      editable: true,
       type: 'bootstrap-postthumbnail'
     }
   }
@@ -37,7 +38,8 @@ var embedlyKeyProperty = {
     type: String,
     optional: true,
     autoform: {
-      group: 'embedly'
+      group: 'embedly',
+      private: true
     }
   }
 }

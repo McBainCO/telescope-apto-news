@@ -39,6 +39,11 @@ Template[getTemplate('quickForm_telescope')].helpers({
   },  
   afFieldsets: function () {
     var groups = _.compact(_.uniq(_.pluckDeep(getSchema(), 'autoform.group')));
+    
+    // if user is not admin, exclude "admin" group from fieldsets
+    if (!isAdmin(Meteor.user()))
+      groups = _.without(groups, 'admin')
+    
     return groups;
   },
   fieldsetName: function () {
@@ -115,6 +120,9 @@ Template["afFormGroup_telescope"].helpers({
       labelAtts['class'] = "control-label";
     }
     return labelAtts;
+  },
+  fieldIsPrivate: function () {
+    return !!this.afFieldInputAtts.private;
   },
   rightColumnClass: function () {
     var atts = this.afFieldInputAtts || {};

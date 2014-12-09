@@ -20,6 +20,7 @@ Package.onUse(function (api) {
     'addToPostSchema', 
     'addToCommentsSchema', 
     'addToSettingsSchema', 
+    'addToUserSchema',
     'preloadSubscriptions', 
     'primaryNav', 
     'secondaryNav', 
@@ -50,6 +51,12 @@ Package.onUse(function (api) {
     'commentEditClientCallbacks',
     'commentEditMethodCallbacks',
     'commentAfterEditMethodCallbacks',
+
+    'userEditRenderedCallbacks',
+    'userEditClientCallbacks',
+    'userProfileCompleteChecks',
+    'userProfileDisplay',
+    'userProfileEdit',
     
     'getTemplate',
     'templates',
