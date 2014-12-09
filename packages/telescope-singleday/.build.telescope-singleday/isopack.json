@@ -1,0 +1,24 @@
+{
+  "isopack-1": {
+    "name": "telescope-singleday",
+    "summary": "Telescope Single Day package",
+    "version": "0.1.0+d549c4bf686f0c49b62057453c63af8c531791d2",
+    "earliestCompatibleVersion": "0.0.0",
+    "isTest": false,
+    "builds": [
+      {
+        "arch": "os",
+        "path": "os.json"
+      },
+      {
+        "arch": "web.browser",
+        "path": "web.browser.json"
+      },
+      {
+        "arch": "web.cordova",
+        "path": "web.cordova.json"
+      }
+    ],
+    "plugins": []
+  }
+}

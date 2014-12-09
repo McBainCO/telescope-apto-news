@@ -1,0 +1,50 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [
+    {
+      "name": "__"
+    },
+    {
+      "name": "InviteSchema"
+    },
+    {
+      "name": "Invites"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "tap:i18n"
+    },
+    {
+      "package": "iron:router"
+    },
+    {
+      "package": "telescope-base"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "telescope-i18n"
+    },
+    {
+      "package": "aldeed:simple-schema"
+    },
+    {
+      "package": "aldeed:autoform"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/telescope-invites.js",
+      "length": 35585,
+      "offset": 0,
+      "servePath": "/packages/telescope-invites.js",
+      "sourceMap": "os/packages/telescope-invites.js.map"
+    }
+  ]
+}

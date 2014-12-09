@@ -1,0 +1,63 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [
+    {
+      "name": "getDigestURL",
+      "export": true
+    },
+    {
+      "name": "__"
+    },
+    {
+      "name": "registerI18nTemplate"
+    },
+    {
+      "name": "registerTemplate"
+    },
+    {
+      "name": "non_package_templates"
+    },
+    {
+      "name": "PostsDigestController"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "telescope-base"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "telescope-i18n"
+    },
+    {
+      "package": "tap:i18n"
+    },
+    {
+      "package": "iron:router"
+    },
+    {
+      "package": "jquery"
+    },
+    {
+      "package": "underscore"
+    },
+    {
+      "package": "templating"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "web.cordova/packages/telescope-singleday.js",
+      "length": 48894,
+      "offset": 0,
+      "servePath": "/packages/telescope-singleday.js",
+      "sourceMap": "web.cordova/packages/telescope-singleday.js.map"
+    }
+  ]
+}
