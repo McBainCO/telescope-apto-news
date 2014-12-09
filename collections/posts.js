@@ -34,7 +34,6 @@ postSchemaObject = {
     type: String,
     label: "URL",
     optional: true,
-    editable: true,
     autoform: {
       editable: true,
       type: "bootstrap-url"
@@ -148,7 +147,11 @@ postSchemaObject = {
     type: Number,
     optional: true,
     autoValue: function () {
-      return getSetting('requirePostsApproval', false) ? STATUS_PENDING: STATUS_APPROVED
+      // only provide a default value
+      // 1) this is an insert operation
+      // 2) status field is not set in the document being inserted
+      if(this.isInsert && !this.isSet)
+        return getSetting('requirePostsApproval', false) ? STATUS_PENDING: STATUS_APPROVED
     },
     autoform: {
       noselect: true,
@@ -159,6 +162,7 @@ postSchemaObject = {
   sticky: {
     type: Boolean,
     optional: true,
+    defaultValue: false,
     autoform: {
       group: 'admin',
       leftLabel: "Sticky"
@@ -459,10 +463,15 @@ Meteor.methods({
 
   approvePost: function(post){
     if(isAdmin(Meteor.user())){
-      var now = new Date();
-      Posts.update(post._id, {$set: {status: 2, postedAt: now}});
+      var set = {status: 2};
+
+      // unless post is already scheduled and has a postedAt date, set its postedAt date to now
+      if (!post.postedAt)
+        set.postedAt = new Date();
+      
+      var result = Posts.update(post._id, {$set: set}, {validate: false});
     }else{
-      throwError('You need to be an admin to do that.');
+      flashMessage('You need to be an admin to do that.', "error");
     }
   },
 
@@ -470,7 +479,7 @@ Meteor.methods({
     if(isAdmin(Meteor.user())){
       Posts.update(post._id, {$set: {status: 1}});
     }else{
-      throwError('You need to be an admin to do that.');
+      flashMessage('You need to be an admin to do that.', "error");
     }
   },
 
@@ -505,11 +514,14 @@ Meteor.methods({
     // }
     // NOTE: actually, keep comments after all
 
-    // decrement post count
     var post = Posts.findOne({_id: postId});
+    
     if(!Meteor.userId() || !canEditById(Meteor.userId(), post)) throw new Meteor.Error(606, 'You need permission to edit or delete a post');
-
+    
+    // decrement post count
     Meteor.users.update({_id: post.userId}, {$inc: {postCount: -1}});
+    
+    // delete post
     Posts.remove(postId);
   }
 

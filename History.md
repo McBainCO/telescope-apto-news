@@ -1,3 +1,14 @@
+## v0.10.0 “RefactorScope”
+
+* Renaming Errors to Messages (thanks @yourcelf!).
+* Adding `fast-render` (thanks @arunoda!).
+* Extracted digest into its own package.
+* Adding "scheduled" view that shows upcoming scheduled posts.
+* Bringing back "delete post" link that was removed by mistake.
+* Made user profile display page modular.
+* Made user profile edit page modular.
+* Started extracting invites into their own package.
+
 ## v0.9.11 “FormScope”
 
 * Now using [Autoform](https://github.com/aldeed/meteor-autoform/)'s **quickform** feature to generate post submit and edit forms. 
