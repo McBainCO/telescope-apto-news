@@ -4,13 +4,15 @@
     {{> quickForm collection="Posts" id="submitPostForm" template="telescope" label-class="control-label" input-col-class="controls"}}
 
 
-       <div> 
-          Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
-          <a href="javascript:(function(){window.s618=document.createElement('script');window.s618.setAttribute('type','text/javascript');window.s618.setAttribute('src','https://bookmarkify.it/bookmarklets/3007/raw');document.getElementsByTagName('body')[0].appendChild(window.s618);})();" id="thelink">Share on CRE.BUZZ</a>
+       </div> 
+          <!-- Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
+          <a href="javascript:(function(){
+          alert('http://cre.buzz/submit?url='+document.location).})();" id="thelink">Share on CRE.BUZZ</a>
        </div> 
     </div>
 
 
+javascript:(function()%7Bwindow.s618%3Ddocument.createElement(%27script%27)%3Bwindow.s618.setAttribute(%27type%27,%27text/javascript%27)%3Bwindow.s618.setAttribute(%27src%27,%27https://bookmarkify.it/bookmarklets/3129/raw%27)%3Bdocument.getElementsByTagName(%27body%27)%5B0%5D.appendChild(window.s618)%3B%7D)()%3B
 
-  
+javascript:location.href='http://cre.buzz/submit?url='+encodeURIComponent(document.location)+'&title='+encodeURIComponent(document.url) -->
 </template>
