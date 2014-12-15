@@ -1,9 +1,23 @@
 AutoForm.hooks({
   submitPostForm: {
     onSubmit: function(insertDoc, updateDoc, currentDoc) {
-
+      
       var properties = insertDoc;
       var submit = this;
+      var urlParams;
+        (window.onpopstate = function () {
+          var match,
+              pl     = /\+/g,  // Regex for replacing addition symbol with a space
+              search = /([^&=]+)=?([^&]*)/g,
+              decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+              query  = window.location.search.substring(1);
+
+          urlParams = {};
+          while (match = search.exec(query))
+               urlParams[decode(match[1])] = decode(match[2]);
+        })();
+        $('input[name=url]').val(urlParams["url"]);
+        $('input[name=title]').val(urlParams["title"]);
 
       // ------------------------------ Checks ------------------------------ //
 
@@ -39,23 +53,7 @@ AutoForm.hooks({
       return false
     },
 
-      var urlParams;
-      (window.onpopstate = function () {
-          var match,
-              pl     = /\+/g,  // Regex for replacing addition symbol with a space
-              search = /([^&=]+)=?([^&]*)/g,
-              decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-              query  = window.location.search.substring(1);
-
-          urlParams = {};
-          while (match = search.exec(query))
-             urlParams[decode(match[1])] = decode(match[2]);
-      })();
-      $('#url').val(urlParams["url"]);
-      $('#title').val(urlParams["title"]);
-    }
     onSuccess: function(operation, result, template) {
-      
       // not used right now because I can't find a way to pass the "post" object to this callback
       // console.log(post)
       // trackEvent("new post", {'postId': post._id});
@@ -82,4 +80,5 @@ AutoForm.hooks({
     // beginSubmit: function(formId, template) {},
     // endSubmit: function(formId, template) {}
   }
+
 });
