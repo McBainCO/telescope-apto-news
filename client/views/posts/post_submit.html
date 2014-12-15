@@ -3,11 +3,12 @@
   <div class="grid grid-module">
     {{> quickForm collection="Posts" id="submitPostForm" template="telescope" label-class="control-label" input-col-class="controls"}}
   </div> 
-          <div>
+       
+       <div>
           	Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
           	<a href="javascript:location.href='http://cre.buzz/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)">Share on CRE.buzz</a>
        </div> 
-    </div>
+    
 	<script>
 		var urlParams;
 		  (window.onpopstate = function () {
