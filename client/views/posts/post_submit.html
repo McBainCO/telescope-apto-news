@@ -1,19 +1,29 @@
 <template name="post_submit">
-<<<<<<< HEAD
 
-<div class="onbutton">
   <div class="grid grid-module">
     {{> quickForm collection="Posts" id="submitPostForm" template="telescope" label-class="control-label" input-col-class="controls"}}
   </div>
-</div>
-       <div> 
+
+     <div> 
           Drag this link into your bookmarks bar to quickly post anything on CRE.BUZZ ->
-          <a href="javascript:(function(){window.s618=document.createElement('script');window.s618.setAttribute('type','text/javascript');window.s618.setAttribute('src','https://bookmarkify.it/bookmarklets/3007/raw');document.getElementsByTagName('body')[0].appendChild(window.s618);})();" id="thelink">Share on CRE.BUZZ</a>
+          <a href="javascript:location.href='http://cre.buzz/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title)">Share on CRE.BUZZ</a>
        </div> 
-  
+  <script type="text/javascript">
+  var urlParams;
+        (window.onpopstate = function () {
+          var match,
+              pl     = /\+/g,  // Regex for replacing addition symbol with a space
+              search = /([^&=]+)=?([^&]*)/g,
+              decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+              query  = window.location.search.substring(1);
+
+          urlParams = {};
+          while (match = search.exec(query))
+               urlParams[decode(match[1])] = decode(match[2]);
+
+            $('input[name=url]').val(urlParams["url"]);
+            $('input[name=title]').val(urlParams["title"]);
+        })();
+        
+  </script>
 </template>
-<script type="text/javascript">
-  $("#onbutton").onclick(function(){
-    alert("Your article has been submitted!");
-  });
-</script>
