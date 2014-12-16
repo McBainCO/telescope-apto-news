@@ -39,7 +39,6 @@ sacha:spin
 sacha:juice
 chuangbo:marked
 percolatestudio:synced-cron
-npm-container
 matb33:collection-hooks
 djedi:sanitize-html
 rajit:bootstrap3-datepicker
@@ -74,6 +73,10 @@ telescope-singleday
 telescope-invites
 
 # Accounts Templates
+service-configuration
+accounts-ui
+splendido:accounts-templates-unstyled
+
 useraccounts:unstyled
 telescope-datetimepicker
 tsega:bootstrap3-datetimepicker@3.1.3_1

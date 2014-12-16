@@ -1,7 +1,6 @@
 AutoForm.hooks({
   submitPostForm: {
-    onSubmit: function(insertDoc, updateDoc, currentDoc) {
-      
+    onSubmit: function(insertDoc, updateDoc, currentDoc) {\
       var properties = insertDoc;
       var submit = this;
       
