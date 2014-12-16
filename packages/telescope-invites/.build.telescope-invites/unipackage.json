@@ -1,0 +1,23 @@
+{
+  "name": "telescope-invites",
+  "summary": "Telescope invites package",
+  "version": "0.1.0+8d6b126d58f0a228f78c6660bea1c6ac170dd6e5",
+  "earliestCompatibleVersion": "0.0.0",
+  "isTest": false,
+  "plugins": [],
+  "unibuilds": [
+    {
+      "arch": "os",
+      "path": "os.json"
+    },
+    {
+      "arch": "web.browser",
+      "path": "web.browser.json"
+    },
+    {
+      "arch": "web.cordova",
+      "path": "web.cordova.json"
+    }
+  ],
+  "format": "unipackage-pre2"
+}

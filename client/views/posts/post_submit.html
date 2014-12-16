@@ -1,5 +1,4 @@
 <template name="post_submit">
-
   <div class="grid grid-module">
     {{> quickForm collection="Posts" id="submitPostForm" template="telescope" label-class="control-label" input-col-class="controls"}}
   </div>
@@ -20,10 +19,10 @@
           urlParams = {};
           while (match = search.exec(query))
                urlParams[decode(match[1])] = decode(match[2]);
-
             $('input[name=url]').val(urlParams["url"]);
             $('input[name=title]').val(urlParams["title"]);
         })();
         
   </script>
 </template>
+

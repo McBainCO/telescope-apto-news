@@ -1,0 +1,77 @@
+{
+  "builtBy": "meteor/14",
+  "buildDependencies": {
+    "os.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package.js": "65a3f82d85e90f54b667b65b9d3175fcbc9c306a",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package-tap.i18n": "f6a2318986df41df748399f53ee3d59d7f31c179",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/routes.js": "e29df1c7550ea0a1117562900fd44c1008dc6237",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/singleday.js": "cdfe5d554c2a6bb9c5c7f566c5ff447dd1507fc6",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/de.i18n.json": "3edcfdec00854dbbd18c09573e72f28465f589a4",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/en.i18n.json": "0d59e7096c36050febf814609d16bb10f33a4681",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/es.i18n.json": "e3bef2cc396e8557947e29dd5bd5fcf170070c89",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/fr.i18n.json": "85a80720d564240ca58c35745503687ab478c609",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/it.i18n.json": "fd3b25419851d1907a332e5ff374ab73beaa5527",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/tr.i18n.json": "08ed8736807156a42a79cf9f996ae03f9662e0cd",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/zh-CN.i18n.json": "71aa6c4ad02a6fbff5fccb26bf58519c0f1a209f"
+      },
+      "directories": []
+    },
+    "web.browser.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package.js": "65a3f82d85e90f54b667b65b9d3175fcbc9c306a",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package-tap.i18n": "f6a2318986df41df748399f53ee3d59d7f31c179",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/routes.js": "e29df1c7550ea0a1117562900fd44c1008dc6237",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/singleday.js": "cdfe5d554c2a6bb9c5c7f566c5ff447dd1507fc6",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/client/templates/posts_digest.html": "5a665001c5e4a190c6e6cf34c13d8dd60d049c67",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/client/templates/posts_digest.js": "c30c4c1016c5dca9e904e0f8248e819acbb2e91c",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/de.i18n.json": "3edcfdec00854dbbd18c09573e72f28465f589a4",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/en.i18n.json": "0d59e7096c36050febf814609d16bb10f33a4681",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/es.i18n.json": "e3bef2cc396e8557947e29dd5bd5fcf170070c89",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/fr.i18n.json": "85a80720d564240ca58c35745503687ab478c609",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/it.i18n.json": "fd3b25419851d1907a332e5ff374ab73beaa5527",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/tr.i18n.json": "08ed8736807156a42a79cf9f996ae03f9662e0cd",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/zh-CN.i18n.json": "71aa6c4ad02a6fbff5fccb26bf58519c0f1a209f"
+      },
+      "directories": []
+    },
+    "web.cordova.json": {
+      "files": {
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package.js": "65a3f82d85e90f54b667b65b9d3175fcbc9c306a",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package-tap.i18n": "f6a2318986df41df748399f53ee3d59d7f31c179",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/routes.js": "e29df1c7550ea0a1117562900fd44c1008dc6237",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/singleday.js": "cdfe5d554c2a6bb9c5c7f566c5ff447dd1507fc6",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/client/templates/posts_digest.html": "5a665001c5e4a190c6e6cf34c13d8dd60d049c67",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/lib/client/templates/posts_digest.js": "c30c4c1016c5dca9e904e0f8248e819acbb2e91c",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/de.i18n.json": "3edcfdec00854dbbd18c09573e72f28465f589a4",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/en.i18n.json": "0d59e7096c36050febf814609d16bb10f33a4681",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/es.i18n.json": "e3bef2cc396e8557947e29dd5bd5fcf170070c89",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/fr.i18n.json": "85a80720d564240ca58c35745503687ab478c609",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/it.i18n.json": "fd3b25419851d1907a332e5ff374ab73beaa5527",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/tr.i18n.json": "08ed8736807156a42a79cf9f996ae03f9662e0cd",
+        "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/i18n/zh-CN.i18n.json": "71aa6c4ad02a6fbff5fccb26bf58519c0f1a209f"
+      },
+      "directories": []
+    }
+  },
+  "pluginDependencies": {
+    "files": {
+      "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday/package.js": "65a3f82d85e90f54b667b65b9d3175fcbc9c306a"
+    },
+    "directories": []
+  },
+  "source": "/Users/grahammcbain/apto/Telescope/packages/telescope-singleday",
+  "buildTimeDirectDependencies": {
+    "telescope-i18n": "0.0.0+59e245bcb9daad9888d7b1165563547b730f4b1e",
+    "tap:i18n": "1.2.1",
+    "telescope-lib": "0.2.9+3c5fc781baa945505183378ea284deac3068520b",
+    "templating": "1.0.9",
+    "underscore": "1.0.1",
+    "iron:router": "1.0.1",
+    "jquery": "1.0.1",
+    "meteor": "1.1.3",
+    "telescope-base": "0.0.0+b76f63cb80a1e2b760fbe78cd316f88286ec807b"
+  },
+  "buildTimePluginDependencies": {},
+  "cordovaDependencies": null
+}

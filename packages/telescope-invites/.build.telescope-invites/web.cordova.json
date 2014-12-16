@@ -1,0 +1,68 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [
+    {
+      "name": "__"
+    },
+    {
+      "name": "registerI18nTemplate"
+    },
+    {
+      "name": "registerTemplate"
+    },
+    {
+      "name": "non_package_templates"
+    },
+    {
+      "name": "InviteSchema"
+    },
+    {
+      "name": "Invites"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "tap:i18n"
+    },
+    {
+      "package": "iron:router"
+    },
+    {
+      "package": "telescope-base"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "telescope-i18n"
+    },
+    {
+      "package": "aldeed:simple-schema"
+    },
+    {
+      "package": "aldeed:autoform"
+    },
+    {
+      "package": "jquery"
+    },
+    {
+      "package": "underscore"
+    },
+    {
+      "package": "templating"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "web.cordova/packages/telescope-invites.js",
+      "length": 36181,
+      "offset": 0,
+      "servePath": "/packages/telescope-invites.js",
+      "sourceMap": "web.cordova/packages/telescope-invites.js.map"
+    }
+  ]
+}

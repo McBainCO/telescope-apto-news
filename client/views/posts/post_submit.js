@@ -1,89 +1,9 @@
-<<<<<<< HEAD
-Template[getTemplate('post_submit')].helpers({
-  categoriesEnabled: function(){
-    return Categories.find().count();
-  },
-  categories: function(){
-    return Categories.find();
-  },
-  users: function(){
-    return Meteor.users.find({}, {sort: {'profile.name': 1}});
-  },
-  userName: function(){
-    return getDisplayName(this);
-  },
-  isSelected: function(user){
-    return user._id == Meteor.userId() ? "selected" : "";
-  },
-  showPostedAt: function () {
-    if(Session.get('currentPostStatus') == STATUS_APPROVED){
-      return 'visible'
-    }else{
-      return 'hidden'
-    }
-    // return (Session.get('currentPostStatus') || STATUS_APPROVED) == STATUS_APPROVED; // default to approved
-  }
-});
-
-Template[getTemplate('post_submit')].rendered = function(){
-  // run all post submit rendered callbacks
-  var instance = this;
-  postSubmitRenderedCallbacks.forEach(function(callback) {
-    callback(instance);
-  });
-
-  Session.set('currentPostStatus', STATUS_APPROVED);
-  Session.set('selectedPostId', null);
-  if(!this.editor && $('#editor').exists())
-    this.editor= new EpicEditor(EpicEditorOptions).load();
-
-  $('#postedAtDate').datepicker();
-
-  // $("#postUser").selectToAutocomplete(); // XXX
-  var urlParams;
-  (window.onpopstate = function () {
-      var match,
-          pl     = /\+/g,  // Regex for replacing addition symbol with a space
-          search = /([^&=]+)=?([^&]*)/g,
-          decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
-          query  = window.location.search.substring(1);
-
-      urlParams = {};
-      while (match = search.exec(query))
-         urlParams[decode(match[1])] = decode(match[2]);
-  })();
-  $('#url').val(urlParams["url"]);
-  $('#title').val(urlParams["title"]);
-};
-
-
-Template[getTemplate('post_submit')].events({
-  'change input[name=status]': function (e, i) {
-    Session.set('currentPostStatus', e.currentTarget.value);
-  },
-  'click input[type=submit]': function(e, instance){
-    e.preventDefault();
-
-    $(e.target).addClass('disabled');
-
-    // ------------------------------ Checks ------------------------------ //
-
-    if(!Meteor.user()){
-      throwError(i18n.t('You must be logged in.'));
-      return false;
-    }
-
-    // ------------------------------ Properties ------------------------------ //
-
-    // Basic Properties
-=======
 AutoForm.hooks({
   submitPostForm: {
-    onSubmit: function(insertDoc, updateDoc, currentDoc) {
->>>>>>> 1bd798fad130c5ffa2ccf38209dea5a7bf7b11e0
-
+    onSubmit: function(insertDoc, updateDoc, currentDoc) {\
       var properties = insertDoc;
       var submit = this;
+      
 
       // ------------------------------ Checks ------------------------------ //
 
@@ -146,4 +66,5 @@ AutoForm.hooks({
     // beginSubmit: function(formId, template) {},
     // endSubmit: function(formId, template) {}
   }
+
 });

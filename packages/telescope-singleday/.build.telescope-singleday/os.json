@@ -1,0 +1,45 @@
+{
+  "format": "unipackage-unibuild-pre1",
+  "packageVariables": [
+    {
+      "name": "getDigestURL",
+      "export": true
+    },
+    {
+      "name": "__"
+    },
+    {
+      "name": "PostsDigestController"
+    }
+  ],
+  "uses": [
+    {
+      "package": "meteor"
+    },
+    {
+      "package": "telescope-base"
+    },
+    {
+      "package": "telescope-lib"
+    },
+    {
+      "package": "telescope-i18n"
+    },
+    {
+      "package": "tap:i18n"
+    },
+    {
+      "package": "iron:router"
+    }
+  ],
+  "resources": [
+    {
+      "type": "prelink",
+      "file": "os/packages/telescope-singleday.js",
+      "length": 35104,
+      "offset": 0,
+      "servePath": "/packages/telescope-singleday.js",
+      "sourceMap": "os/packages/telescope-singleday.js.map"
+    }
+  ]
+}
